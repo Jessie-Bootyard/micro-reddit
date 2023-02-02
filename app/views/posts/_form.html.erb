@@ -1,0 +1,33 @@
+<div class="custom__container">
+        <%= form_with(model: @post, local: true) do|f| %>
+
+            <div class="wrapper">
+                <div class="t">
+                    <%= f.label :title %>
+                </div>
+                <div class="tf">
+                    <%= f.text_field :title %>
+                </div>
+                <div class="d">
+                    <%= f.label :description %>
+                </div>
+                <div class="df">
+                    <%= f.text_area :description, rows: 5 %>
+                </div>
+                <div class="n">
+                    <%= f.label :name %>
+                </div>             
+                <div class="nf">
+                    <%= f.text_field :name %> 
+                </div>        
+                <div class="create-btn">
+                    <%= f.submit %>
+                </div> 
+                <div class="back-btn">
+                    <%= link_to "Cancel", posts_path, class: "back__link" %>
+                </div>                
+            </div>
+                
+        <% end %>
+</div>
+

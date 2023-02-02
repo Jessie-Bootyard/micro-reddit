@@ -1,0 +1,6 @@
+<div class="comment">
+  <p class="comment-description"><%= comment.comment %></p>
+  <% if current_user == @post.user || current_user == comment.user %>
+    <%= button_to "Comment", post_comment_path(@post, comment), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <% end %>
+</div>

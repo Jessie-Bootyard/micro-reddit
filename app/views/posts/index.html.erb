@@ -1,0 +1,14 @@
+<div class="container">
+    <%@posts.each do|post|%>
+        <div class="card">
+            <div class="card__date">
+                <%=post.user.username %> 
+            </div>
+            <h3><%= link_to post.title, post_path(post), class: "card__title" %></h3>
+            <div class="card-con">
+                <p class="card__content"><%=truncate(post.description, length:40, separator: ' ')%></p>
+                <%= link_to "Read More", post_path(post), class: "card__arrow" %>
+            </div>
+        </div>
+    <%end%>
+</div>
